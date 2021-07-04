@@ -5,7 +5,7 @@ let listEL = document.getElementById("list-el")
 
 btnSave.addEventListener("click", function(){
     myLeads.push(inputEl.value)
-    
+    inputEl.value = ""
     renderLeads()
 })
 
