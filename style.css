@@ -76,6 +76,16 @@ ul {
 }
 
 li {
+    margin-top: 12px;
     list-style: none;
     border-bottom: 1px solid #999;
+}
+
+a {
+    color: blue;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
