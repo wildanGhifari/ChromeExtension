@@ -6,14 +6,10 @@ let listEL = document.getElementById("list-el")
 let leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
 console.log(leadsFromLocalStorage)
 
-btnSave.addEventListener("click", function(){
-    myLeads.push(inputEl.value)
-    inputEl.value = ""
-
-    // Store myLeads to localstorage
-    localStorage.setItem("myLeads", JSON.stringify(myLeads)) 
+if (leadsFromLocalStorage) {
+    myLeads = leadsFromLocalStorage
     renderLeads()
-})
+}
 
 function renderLeads() {
     let listItem
@@ -31,3 +27,12 @@ function renderLeads() {
 
     listEL.innerHTML += listItem
 }
+
+btnSave.addEventListener("click", function(){
+    myLeads.push(inputEl.value)
+    inputEl.value = ""
+
+    // Store myLeads to localstorage
+    localStorage.setItem("myLeads", JSON.stringify(myLeads)) 
+    renderLeads()
+})
